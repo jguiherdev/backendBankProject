@@ -1,0 +1,31 @@
+package com.bank.bank.transaction;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TransactionService {
+
+    Transaction t1=new Transaction("1","1","2","100");
+    Transaction t2=new Transaction("2","1","3","200");
+    Transaction t3=new Transaction("3","2","3","300");
+
+    List<Transaction> transactions = new ArrayList<>(Arrays.asList(t1, t2,t3));
+
+    public List<Transaction> getAllTransactions() { 
+        return transactions;
+    }
+
+    public Transaction getTransaction(String id) {
+        Transaction transaction=transactions.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+        return transaction;
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactions.add(transaction);
+    }
+    
+}

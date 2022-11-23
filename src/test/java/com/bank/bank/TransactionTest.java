@@ -30,7 +30,7 @@ class TransactionTest {
 	void addTransactionTest() {
 		TransactionService transactionService = new TransactionService();
 		transactionService.addTransaction(new Transaction(
-				"4","4","3","400"));
+				"4","4","3",400.0));
 		assertTrue(transactionService.getAllTransactions().size()==4);
 	}
 	

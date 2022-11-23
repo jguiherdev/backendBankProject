@@ -5,9 +5,9 @@ public class Transaction {
     public String id;
     public String from;
     public String to;
-    public String amount;
+    public Double amount;
 
-    public Transaction(String id, String from, String to, String amount) {
+    public Transaction(String id, String from, String to, Double amount) {
         super();
         this.id = id;
         this.from = from;
@@ -43,11 +43,11 @@ public class Transaction {
         this.to = to;
     }
 
-    public String getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

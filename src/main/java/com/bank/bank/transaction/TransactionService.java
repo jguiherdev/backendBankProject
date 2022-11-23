@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TransactionService {
 
-    Transaction t1=new Transaction("1","1","2","100");
-    Transaction t2=new Transaction("2","1","3","200");
-    Transaction t3=new Transaction("3","2","3","300");
+    Transaction t1=new Transaction("1","1","2",100.0);
+    Transaction t2=new Transaction("2","1","3",200.0);
+    Transaction t3=new Transaction("3","2","3",300.0);
 
-    List<Transaction> transactions = new ArrayList<>(Arrays.asList(t1, t2,t3));
+    List<Transaction> transactions = new ArrayList<Transaction>(Arrays.asList(t1, t2,t3));
 
     public List<Transaction> getAllTransactions() { 
         return transactions;

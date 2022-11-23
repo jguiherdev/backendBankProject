@@ -30,7 +30,7 @@ class BankAccountTest {
 	void addBankAccountTest() {
 		BankAccountService bankAccountService = new BankAccountService();
 		bankAccountService.addBankAccount(new BankAccount(
-				"4","4","400"));
+				"4","4",400.0));
 		assertTrue(bankAccountService.getAllBankAccounts().size()==4);
 	}
 
@@ -45,7 +45,7 @@ class BankAccountTest {
 	void updateBankAccountTest() {
 		BankAccountService bankAccountService = new BankAccountService();
 		bankAccountService.updateBankAccount("1", new BankAccount(
-				"1","1","1000"));
+				"1","1",1000.0));
 		assertTrue(bankAccountService.getBankAccount("1").getBalance().equals("1000"));
 	}
 

@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class BankAccountService {
 
-    BankAccount b1=new BankAccount("1","1","100");
-    BankAccount b2=new BankAccount("2","2","200");
-    BankAccount b3=new BankAccount("3","3","300");
+    BankAccount b1=new BankAccount("1","1",100.0);
+    BankAccount b2=new BankAccount("2","2",200.0);
+    BankAccount b3=new BankAccount("3","3",300);
 
     List<BankAccount> bankAccounts = new ArrayList<BankAccount>(Arrays.asList(b1, b2,b3)) ;
 

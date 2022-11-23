@@ -4,9 +4,9 @@ public class BankAccount {
 
     public String id;
     public String userId;
-    public String balance;
+    public Double balance;
 
-    public BankAccount(String id, String userId, String balance) {
+    public BankAccount(String id, String userId, double balance) {
         super();
         this.id = id;
         this.userId = userId;
@@ -34,11 +34,11 @@ public class BankAccount {
         this.userId = userId;
     }
 
-    public String getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 

@@ -7,10 +7,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.bank.bank.bankaccount.BankAccount;
 import com.bank.bank.bankaccount.BankAccountService;
+import com.bank.bank.transaction.TransactionService;
 
 @SpringBootTest
 class BankAccountTest {
-
 
 	@Test
 	void getAllBankAccountsTest() {
@@ -46,7 +46,19 @@ class BankAccountTest {
 		BankAccountService bankAccountService = new BankAccountService();
 		bankAccountService.updateBankAccount("1", new BankAccount(
 				"1","1",1000.0));
-		assertTrue(bankAccountService.getBankAccount("1").getBalance().equals("1000"));
+		assertTrue(bankAccountService.getBankAccount("1").getBalance().equals(1000.0));
 	}
+
+	
+	@Test
+	void updateBalanceTest() {
+		TransactionService transactionService = new TransactionService();
+		BankAccountService bankAccountService = new BankAccountService();
+		bankAccountService.updateBalance(transactionService.getTransaction("1"));
+		assertTrue(bankAccountService.getBankAccount("1").getBalance().equals(0.0));
+		assertTrue(bankAccountService.getBankAccount("2").getBalance().equals(300.0));
+	}
+
+
 
 }

@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.bank.bank.bankaccount.BankAccountService;
 
 @Service
 public class TransactionService {
+
+    @Autowired
+    private BankAccountService bankAccountService;
 
     Transaction t1=new Transaction("1","1","2",100.0);
     Transaction t2=new Transaction("2","1","3",200.0);
@@ -26,6 +32,8 @@ public class TransactionService {
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
+        bankAccountService.updateBalance(transaction);
+
     }
 
     

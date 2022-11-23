@@ -40,10 +40,6 @@ public class BankAccountController {
         bankAccountService.updateBankAccount(id, bankAccount);
     }
 
-
-    
-
-
 }
 
     

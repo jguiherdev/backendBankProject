@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.bank.bank.transaction.Transaction;
+
 @Service
 public class BankAccountService {
 
@@ -39,6 +41,20 @@ public class BankAccountService {
             if (b.getId().equals(id)) {
                 bankAccounts.set(i, bankAccount);
                 return;
+            }
+        }
+    }
+
+    public void updateBalance(Transaction transaction) {
+        for (int i = 0; i < bankAccounts.size(); i++) {
+            BankAccount b = bankAccounts.get(i);
+            if (b.getId().equals(transaction.getFrom())) {
+                b.setBalance(b.getBalance()-transaction.getAmount());
+                bankAccounts.set(i, b);
+            }
+            if (b.getId().equals(transaction.getTo())) {
+                b.setBalance(b.getBalance()+transaction.getAmount());
+                bankAccounts.set(i, b);
             }
         }
     }

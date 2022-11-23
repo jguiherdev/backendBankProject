@@ -36,5 +36,15 @@ public class UserService {
             }
         }
     }
+
+    public Userr login(String email, String password) {
+        for (int i = 0; i < users.size(); i++) {
+            Userr u = users.get(i);
+            if (u.getEmail().equals(email) && u.getPassword().equals(password)) {
+                return u;
+            }
+        }
+        return null;
+    }
     
 }

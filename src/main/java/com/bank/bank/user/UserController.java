@@ -34,5 +34,10 @@ public class UserController {
 	public void updateUser(@RequestBody Userr user, @PathVariable String id) {
 	userService.updateUser(id, user);
 	}
+
+	@RequestMapping(value = "/users/login", method = RequestMethod.POST)
+	public String login(@RequestBody String email, String password) {
+		return "user logged in";
+	}
 	
 }

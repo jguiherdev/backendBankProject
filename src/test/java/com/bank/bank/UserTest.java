@@ -39,4 +39,12 @@ class UserTest {
 		assertTrue(userService.getAllUsers().size()==4);
 	}
 
+	
+	@Test
+	void loginTest() {
+		UserService userService = new UserService();
+		Userr user=userService.login("jhondoe@gmail.com", "123456789");
+		assertTrue(userService.login("jhondoe@gmail.com", "123456789").equals(user));
+	}
+
 }

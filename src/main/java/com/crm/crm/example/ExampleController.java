@@ -1,4 +1,4 @@
-package com.bank.bank.example;
+package com.crm.crm.example;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

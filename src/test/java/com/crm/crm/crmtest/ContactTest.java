@@ -1,13 +1,15 @@
-package com.bank.bank;
+package com.crm.crm.crmtest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BankApplicationTests {
+public class ContactTest {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void getAllContacts() {
+        
+    }
 
+    
 }
